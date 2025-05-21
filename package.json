@@ -1,6 +1,7 @@
 {
   "name": "marvel-nexus-actions",
   "version": "1.0.0",
+  "description": "Modular GPT-compatible action API for bookmarks, events, relationships, and locations.",
   "main": "api/index.js",
   "scripts": {
     "start": "node api/index.js"
@@ -8,5 +9,10 @@
   "dependencies": {
     "express": "^4.18.2",
     "cors": "^2.8.5"
-  }
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "author": "AndracoDragon",
+  "license": "MIT"
 }
