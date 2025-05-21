@@ -37,6 +37,14 @@ function createBookmark(title, summary) {
 
   return newBookmark;
 }
+function getBookmarks() {
+  const log = loadLog();
+  return log.bookmarks || [];
+}
 
 // Export function
-module.exports = { createBookmark };
+module.exports = {
+  createBookmark,
+  getBookmarks
+};
+
