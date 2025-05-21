@@ -2,6 +2,9 @@ const express = require('express');
 const cors = require('cors');
 
 const { createBookmark, getBookmarks } = require('../actions/bookmark');
+const { addEvent, getEvents } = require('../actions/event-log');
+const { updateRelationship, getRelationships } = require('../actions/relationship-log');
+const { updateLocation, getLocations } = require('../actions/location-log');
 const {
   addEvent,
   updateRelationship,
