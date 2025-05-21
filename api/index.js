@@ -9,7 +9,6 @@ const {
   addEvent,
   updateRelationship,
   updateLocation
-} = require('../actions/log');
 
 const app = express();
 app.use(cors());
