@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 
-const { createBookmark } = require('../actions/bookmark');
+const { createBookmark, getBookmarks } = require('../actions/bookmark');
 const {
   addEvent,
   updateRelationship,
@@ -23,6 +23,11 @@ app.post('/bookmark', (req, res) => {
   if (!title || !summary) return res.status(400).json({ error: 'Missing title or summary' });
   const result = createBookmark(title, summary);
   res.json(result);
+});
+
+app.get('/bookmark', (req, res) => {
+  const bookmarks = getBookmarks();
+  res.json(bookmarks);
 });
 
 // Event log endpoint
