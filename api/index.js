@@ -14,7 +14,7 @@ app.use(express.json());
 
 // Root check
 app.get('/', (req, res) => {
-  res.send('Marvel Nexus API is live');
+  res.json({ message: 'Marvel Nexus API is live' });
 });
 
 // Bookmark endpoint
@@ -59,4 +59,8 @@ app.post('/log/location', (req, res) => {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Marvel Nexus API is running on port ${PORT}`);
+});
+
+app.use((req, res) => {
+  res.status(404).json({ error: "Endpoint not found" });
 });
