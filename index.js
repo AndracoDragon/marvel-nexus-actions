@@ -4,7 +4,7 @@ console.log('CWD:', process.cwd());
 console.log('Files in working dir:', fs.readdirSync('.')); // Debug: will show if credentials.json is present
 
 const { google } = require('googleapis');
-const credentials = require('./credentials.json'); // This will work if the secret is mounted as 'credentials.json' in the root
+const credentials = require('/workspace/credentials.json'); 
 
 const auth = new google.auth.GoogleAuth({
     credentials: credentials,
