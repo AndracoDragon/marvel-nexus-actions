@@ -1,10 +1,14 @@
 const express = require('express');
+const fs = require('fs');
+console.log('CWD:', process.cwd());
+console.log('Files in working dir:', fs.readdirSync('.')); // Debug: will show if credentials.json is present
+
 const { google } = require('googleapis');
-const credentials = require('./credentials.json');
+const credentials = require('./credentials.json'); // This will work if the secret is mounted as 'credentials.json' in the root
 
 const auth = new google.auth.GoogleAuth({
-  credentials: credentials,
-  scopes: ['https://www.googleapis.com/auth/drive']
+    credentials: credentials,
+    scopes: ['https://www.googleapis.com/auth/drive']
 });
 
 const drive = google.drive({ version: 'v3', auth });
@@ -61,7 +65,4 @@ app.post('/log-event', async (req, res) => {
     }
 });
 
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Server running on port ${PORT}`);
-});
+const PORT
